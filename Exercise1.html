@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-<head>
-    <meta charset="UTF-8">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+  />
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Exercise1</title>
-</head>
-<body>
-    <header class="container" style="align-items: ce;">
-
-    <h2>Exercise 1</h2>
-    <div id="d1" style="width: 500px; margin: 1px; background-color: blue;">&nbsp;</div>
-    <div id="d2" style="width: 500px; margin: 1px; background-color: blue;">&nbsp;</div>
-    <div id="d3" style="width: 500px; margin: 1px; background-color: blue;">&nbsp;</div>
-    <button id="btn">Change the color</button>
+  </head>
+  <body>
+    <header class="container">
+      <h2>Exercise 1</h2>
+      <div id="d1" style="width: 500px; margin: 1px; background-color: blue">
+        &nbsp;
+      </div>
+      <div id="d2" style="width: 500px; margin: 1px; background-color: blue">
+        &nbsp;
+      </div>
+      <div id="d3" style="width: 500px; margin: 1px; background-color: blue">
+        &nbsp;
+      </div>
+      <button id="btn">Change all to random colors</button>
     </header>
-</body>
+    <script type="application/javascript">
 
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++)
+            color += letters[Math.floor(Math.random() * 16)];
+        return color;
+        }
+
+              const divs = document.querySelectorAll("div");
+              for (let i = 0; i < 3; i++) {
+                console.log(divs[i]);
+                divs[i].style.backgroundColor = "blue";
+              }
+              document.getElementById("btn").onclick = () => {
+                divs[0].style.backgroundColor = getRandomColor();
+                divs[1].style.backgroundColor = getRandomColor();
+                divs[2].style.backgroundColor = getRandomColor();
+              };
+    </script>
+  </body>
 </html>
-<script type="application/javascript">
-    const divs = document.querySelectorAll("div")
-    for(let i = 0; i<3; i++){
-        console.log(divs[i])
-        divs[i].style.backgroundColor = "blue"
-    }
-    document.getElementById("btn").onclick = ()=> {
-        document.querySelector("#d1").style.backgroundColor = "red"
-        divs[1].style.backgroundColor = "yellow"
-        divs[2].style.backgroundColor = "green"
-    }
-
-</script>

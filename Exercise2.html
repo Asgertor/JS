@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercise2</title>
+    <style>
+      .my-div {
+        width: 50px;
+        height: 50px;
+        margin: 1px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <h2>Exercise 2</h2>
+      <div id="outer">
+        <div id="id-1" class="my-div"></div>
+        <div id="id-2" class="my-div"></div>
+        <div id="id-3" class="my-div"></div>
+        <div id="id-4" class="my-div"></div>
+        <div id="id-5" class="my-div"></div>
+        <div id="id-6" class="my-div"></div>
+        <div id="id-7" class="my-div"></div>
+        <div id="id-8" class="my-div"></div>
+        <div id="id-9" class="my-div"></div>
+        <div id="id-10" class="my-div"></div>
+      </div>
+      <p id="p-text"></p>
+
+      <div style="border: 1px solid white; border-radius: 5px; padding: 1em">
+        Replace with a descriptiton that clearly show that you understand the
+        concept of event bubbling, and how you have used it in your solution<br />
+        Feel free to write in danish
+      </div>
+    </header>
+    <script>
+      document.getElementById("outer").onclick = (evt) => {
+        const id = evt.target.id;
+        console.log("Hi from div number: " + id);
+        document.getElementById("p-text").innerText = id;
+      };
+    </script>
+  </body>
+</html>
