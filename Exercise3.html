@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercise3</title>
+  </head>
+  <body>
+    <header class="container">
+      <h2>Exercise 3</h2>
+      <ul id="my-ul">
+        <li>Lars</li>
+        <li>Peter</li>
+        <li>Janne</li>
+        <li>Susanne</li>
+      </ul>
+      <form>
+        <input id="name-input" />
+        <button id="btn-add">Add Name</button>
+        <button id="btn-rm-first">Remove First</button>
+        <button id="btn-rm-last">Remove Last</button>
+      </form>
+      <div style="border: 1px solid white; border-radius: 5px; padding: 1em">
+        - Where and why you used the event-method preventDefault() 
+        - Even if not done in this exercise, what do you have to be aware of when using the
+        innerHTML field 
+        -How did you change the DOM-list with all the names when you added, removed a name? By manipulating a single DOM element, or by
+        rebuilding the whole UL using the new version of the data
+      </div>
+      <a href="/">Back to start</a>
+    </header>
+
+    <script>
+      const names = ["Lars", "Peter", "Janne", "Susanne"];
+
+      function createListItems() {
+        document.getElementById("my-ul").innerHTML = names
+          .map((name) => `<li>${name}</li>`)
+          .join("");
+      }
+      createListItems();
+
+      document.getElementById("btn-add").onclick = (evt) => {
+        evt.preventDefault();
+        const newName = document.getElementById("name-input").value;
+        names.push(newName);
+        createListItems();
+      };
+      document.getElementById("btn-rm-first").onclick = (evt) => {
+        evt.preventDefault();
+        names.shift();
+        createListItems();
+      };
+      document.getElementById("btn-rm-last").onclick = (evt) => {
+        evt.preventDefault();
+        names.pop();
+        createListItems();
+      };
+    </script>
+  </body>
+</html>

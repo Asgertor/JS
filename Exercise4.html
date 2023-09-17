@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header class="container">
+    <h2>Exercise 4</h2>
+
+    <select id="car-selector">
+    </select>
+
+    <h1 id="car-make"></h1>
+
+    <div style="border: 1px solid white; border-radius: 5px; padding: 1em">
+        Reflect on when you would use a select-element. For a few (perhaps max 10) or many more possible options?
+        Explain in words that clearly show that you understand what you did to solve this problem
+      </div>
+    <a href="/">Back to start</a>
+
+</header>
+
+    <script>
+      const cars = ["Ford", "WW", "Toyota", "Volvo"];
+      const selectElement = document.getElementById("car-selector");
+
+      cars.forEach((carMake) => {
+        const option = document.createElement("option");
+        option.value = carMake;
+        option.textContent = carMake.toUpperCase();
+        selectElement.appendChild(option);
+      });
+
+      selectElement.addEventListener("change", (event) => {
+        document.getElementById("car-make").innerText = event.target.value;
+      });
+    </script>
+  </body>
+</html>

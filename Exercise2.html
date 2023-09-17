@@ -35,10 +35,15 @@
       <p id="p-text"></p>
 
       <div style="border: 1px solid white; border-radius: 5px; padding: 1em">
-        Replace with a descriptiton that clearly show that you understand the
-        concept of event bubbling, and how you have used it in your solution<br />
-        Feel free to write in danish
+        When you click on any of the red squares, or besides the squares, the event bubbles up through the DOM hierarchy. 
+        The event handler captures the click event and identifies which div was clicked by accessing its ID.
+        It then logs a message to the console, and updates the element with the ID "p-text" to display the same information.
+    
+
+
       </div>
+      <a href="/">Back to start</a>
+
     </header>
     <script>
       document.getElementById("outer").onclick = (evt) => {

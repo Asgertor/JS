@@ -22,27 +22,28 @@
         &nbsp;
       </div>
       <button id="btn">Change all to random colors</button>
+      <a href="/">Back to start</a>
+
     </header>
     <script type="application/javascript">
-
       function getRandomColor() {
         var letters = "0123456789ABCDEF";
         var color = "#";
         for (var i = 0; i < 6; i++)
-            color += letters[Math.floor(Math.random() * 16)];
+          color += letters[Math.floor(Math.random() * 16)];
         return color;
-        }
+      }
 
-              const divs = document.querySelectorAll("div");
-              for (let i = 0; i < 3; i++) {
-                console.log(divs[i]);
-                divs[i].style.backgroundColor = "blue";
-              }
-              document.getElementById("btn").onclick = () => {
-                divs[0].style.backgroundColor = getRandomColor();
-                divs[1].style.backgroundColor = getRandomColor();
-                divs[2].style.backgroundColor = getRandomColor();
-              };
+      const divs = document.querySelectorAll("div");
+      for (let i = 0; i < 3; i++) {
+        console.log(divs[i]);
+        divs[i].style.backgroundColor = "blue";
+      }
+      document.getElementById("btn").onclick = () => {
+        divs[0].style.backgroundColor = getRandomColor();
+        divs[1].style.backgroundColor = getRandomColor();
+        divs[2].style.backgroundColor = getRandomColor();
+      };
     </script>
   </body>
 </html>
